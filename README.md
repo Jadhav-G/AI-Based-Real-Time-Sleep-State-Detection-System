@@ -39,6 +39,7 @@ When prolonged eye closure is detected, the system triggers an audio alarm to al
 Uses MediaPipe FaceLandmarker model:
 
 face_landmarker.task
+
 🔹 2. Eye Aspect Ratio (EAR) Calculation
 
 Eye landmarks used:
@@ -48,72 +49,33 @@ LEFT_EYE → [33, 160, 158, 133, 153, 144]
 RIGHT_EYE → [362, 385, 387, 263, 373, 380]
 
 EAR Formula:
+EAR = (||p2 - p6|| + ||p3 - p5||) / (2 × ||p1 - p4||)
 
-𝐸
-𝐴
-𝑅
-=
-∣
-∣
-𝑝
-2
-−
-𝑝
-6
-∣
-∣
-+
-∣
-∣
-𝑝
-3
-−
-𝑝
-5
-∣
-∣
-2
-×
-∣
-∣
-𝑝
-1
-−
-𝑝
-4
-∣
-∣
-EAR=
-2×∣∣p1−p4∣∣
-∣∣p2−p6∣∣+∣∣p3−p5∣∣
-	​
+Sleep Detection Condition:
 
-
-If:
-
-EAR < 0.22 for 20 consecutive frames
+EAR < 0.22 for 20 consecutive frames​
 
 → User considered Sleeping
 
 🖥️ System Workflow
 
-Capture live video using OpenCV.
+1. Capture live video using OpenCV.
 
-Detect face landmarks using MediaPipe.
+2. Detect face landmarks using MediaPipe.
 
-Extract eye coordinates.
+3. Extract eye coordinates.
 
-Compute EAR.
+4. Compute EAR.
 
-If EAR remains below threshold:
+5. If EAR remains below threshold:
 
-Display “SLEEPING!”
+    - Display “SLEEPING!”
 
-Play alarm sound (alarm.mp3)
+    - Play alarm sound (alarm.mp3)
 
-When eyes reopen:
+6. When eyes reopen:
 
-Stop alarm.
+   -Stop alarm.
 
 📂 Project Structure
 AI-Based-Real-Time-Sleep-State-Detection-System/
@@ -124,19 +86,25 @@ AI-Based-Real-Time-Sleep-State-Detection-System/
 ├── inspect_mediapipe.py     # MediaPipe inspection utility
 ├── requirements.txt
 └── README.md
-🚀 Installation Guide
+
+
+🚀 Installation Guide :
+
 1️⃣ Clone Repository
 git clone https://github.com/Jadhav-G/AI-Based-Real-Time-Sleep-State-Detection-System.git
 cd AI-Based-Real-Time-Sleep-State-Detection-System
+
 2️⃣ Create Virtual Environment (Recommended)
 python -m venv venv
 venv\Scripts\activate   # Windows
+
 3️⃣ Install Dependencies
 pip install opencv-python mediapipe numpy pygame
 
 Or using requirements file:
 
 pip install -r requirements.txt
+
 4️⃣ Run the Application
 python main.py
 ⚙️ Configuration Parameters
@@ -152,45 +120,10 @@ EAR sensitivity
 
 Number of consecutive frames
 
-🧪 Technologies Used
 
-Python
 
-OpenCV
-
-MediaPipe Tasks API
-
-NumPy
-
-Tkinter
-
-Pygame
-
-📊 Applications
-
-🚗 Driver Drowsiness Detection
-
-🏭 Industrial Worker Fatigue Monitoring
-
-🏥 Healthcare Monitoring
-
-🛡️ Safety-Critical Environments
-
-🔮 Future Improvements
-
-Add sound volume control
-
-Add blink rate analytics
-
-Add sleep duration tracking
-
-Deploy as desktop executable (.exe)
-
-Integrate cloud logging system
-
-Add machine learning-based classification
 
 👨‍💻 Author
 
-Ganesh Jadhav
+Ganesh Namdev Jadhav
 AI & Machine Learning Enthusiast
