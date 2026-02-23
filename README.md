@@ -77,15 +77,6 @@ EAR < 0.22 for 20 consecutive frames​
 
    -Stop alarm.
 
-📂 Project Structure
-AI-Based-Real-Time-Sleep-State-Detection-System/
-│
-├── main.py                  # Main application file
-├── face_landmarker.task     # MediaPipe model
-├── alarm.mp3                # Alarm sound file
-├── inspect_mediapipe.py     # MediaPipe inspection utility
-├── requirements.txt
-└── README.md
 
 
 🚀 Installation Guide :
@@ -126,4 +117,5 @@ Number of consecutive frames
 👨‍💻 Author
 
 Ganesh Namdev Jadhav
+
 AI & Machine Learning Enthusiast
