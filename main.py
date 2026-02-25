@@ -7,12 +7,10 @@ import tkinter as tk
 import threading
 import pygame
 
-# Initialize pygame
 pygame.mixer.init()
 
 MODEL_PATH = "face_landmarker.task"
 
-# Setup MediaPipe FaceLandmarker
 BaseOptions = python.BaseOptions
 FaceLandmarker = vision.FaceLandmarker
 FaceLandmarkerOptions = vision.FaceLandmarkerOptions
@@ -153,7 +151,6 @@ root.geometry("520x480")
 root.configure(bg="#0f0f1a")
 root.resizable(False, False)
 
-# Title
 title = tk.Label(
     root,
     text="AI Sleep Detection",
@@ -173,7 +170,6 @@ subtitle = tk.Label(
 subtitle.pack(pady=(0, 30))
 
 
-# Status Indicator
 status_label = tk.Label(
     root,
     text="System Status: Idle",
@@ -184,7 +180,6 @@ status_label = tk.Label(
 status_label.pack(pady=10)
 
 
-# Button Style Function
 def styled_button(text, command, color):
     return tk.Button(
         root,
