@@ -114,8 +114,8 @@ Number of consecutive frames
 
 
 
-👨‍💻 Author
+##👨‍💻 Author
 
-Ganesh Namdev Jadhav
+##Ganesh Namdev Jadhav
 
 AI & Machine Learning Enthusiast
